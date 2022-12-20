@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>MedicinalPlants</ApplicationTitle>
+		<ApplicationTitle>Med Plants</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.medicinalplants</ApplicationId>
@@ -32,7 +32,12 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\appicon.svg">
+			<Color>#ffffff</Color>
+			<BaseSize>32,32</BaseSize>
+			<ForegroundScale>0.85</ForegroundScale>
+		</MauiIcon>
+		<!--<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />-->
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -49,12 +54,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Repository\Plants.db" />
+	  <None Remove="Resources\AppIcon\growing_grow.svg" />
 	  <None Remove="Resources\Fonts\FrederickatheGreat-Regular.ttf" />
 	  <None Remove="Resources\Fonts\KaushanScript-Regular.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Repository\" />
+	  <EmbeddedResource Include="Repository\Plants.db" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
 </Project>
