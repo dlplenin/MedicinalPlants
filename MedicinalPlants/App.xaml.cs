@@ -6,6 +6,9 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+#pragma warning disable S125 // Sections of code should not be commented out
+        //MainPage = new AppShell();
+#pragma warning restore S125 // Sections of code should not be commented out
+        MainPage = new NavigationPage(new SplashScreen());
+    }
 }

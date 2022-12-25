@@ -40,11 +40,11 @@
 		<!--<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />-->
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<!--<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />-->
+		<MauiSplashScreen Include="Resources\Images\growing_grow.png" Color="#ffffff" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -54,18 +54,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\growing_grow.png" />
+	  <MauiImage Remove="Resources\Images\growing_grow.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Platforms\Android\Resources\growing_grow.svg" />
 	  <None Remove="Repository\Plants.db" />
 	  <None Remove="Resources\AppIcon\growing_grow.svg" />
 	  <None Remove="Resources\Fonts\FrederickatheGreat-Regular.ttf" />
 	  <None Remove="Resources\Fonts\KaushanScript-Regular.ttf" />
+	  <None Remove="Resources\Images\growing_grow.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Include="Repository\Plants.db" />
+	  <EmbeddedResource Include="Resources\Images\growing_grow.png" />
+	  <EmbeddedResource Include="Resources\Images\growing_grow.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Splash\" />
 	</ItemGroup>
 
 </Project>
