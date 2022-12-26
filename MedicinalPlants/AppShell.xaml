@@ -5,11 +5,42 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MedicinalPlants"
     xmlns:views="clr-namespace:MedicinalPlants.Views"
+    xmlns:fontAwesome="clr-namespace:FontAwesome"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate views:HomePage}"
-        Route="HomePage" />
+        Route="HomePage" />-->
 
+    <!--<TabBar>
+        <ShellContent Route="HomePage" ContentTemplate="{DataTemplate views:HomePage}" />
+    </TabBar>-->
+
+    <!--<FlyoutItem 
+        Title="Inicio" 
+        Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Home},
+                        FontFamily={StaticResource FontAwesomeSolid},
+                        Color={StaticResource Yellow100Accent}}"
+    >
+        <ShellContent 
+            Route="HomePage" 
+            ContentTemplate="{DataTemplate views:HomePage}" />
+    </FlyoutItem>-->
+    <TabBar>
+        <Tab Title="Inicio"
+             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Home},
+                        FontFamily={StaticResource FontAwesomeSolid},
+                        Color={StaticResource Yellow100Accent}}"
+             >
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+        </Tab>
+        <Tab Title="Plantas"
+             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Leaf},
+                        FontFamily={StaticResource FontAwesomeSolid},
+                        Color={StaticResource GreenBackgroundColor}}"
+             >
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+        </Tab>
+    </TabBar>
 </Shell>
