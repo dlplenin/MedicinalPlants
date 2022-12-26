@@ -43,7 +43,7 @@
 
 
     <Color x:Key="Primary">#2482F2</Color>
-    <Color x:Key="MainTitle">#F92386</Color>
+    <Color x:Key="MainTitle">#FD0075</Color>
 
     <Color x:Key="WhitishBackgroundColor">#FEF9EF</Color>
     <Color x:Key="GreenishBackgroundColor">#C5DECD</Color>
