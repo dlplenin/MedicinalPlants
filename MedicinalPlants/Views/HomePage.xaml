@@ -42,7 +42,7 @@
         <ScrollView Margin="0,50,0,0" Grid.Row="2">
             <StackLayout Orientation="Vertical" Padding="30,0,30,24" Spacing="10">
                 <Label 
-                    Text="Guía rápida de Plantas Medicinales" 
+                    Text="Guía rápida de &#10; Plantas Medicinales" 
                     FontFamily="FrederickatheGreatRegular" 
                     FontSize="40" 
                     HorizontalTextAlignment="Center"

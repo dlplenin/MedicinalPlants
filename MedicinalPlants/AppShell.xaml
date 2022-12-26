@@ -7,8 +7,9 @@
     xmlns:views="clr-namespace:MedicinalPlants.Views"
     xmlns:fontAwesome="clr-namespace:FontAwesome"
     Shell.FlyoutBehavior="Disabled"
-    TabBarTitleColor="{StaticResource Primary}"
-    TabBarUnselectedColor="{StaticResource Gray400}"
+    TabBarBackgroundColor="{StaticResource Yellow100Accent}"
+    TabBarTitleColor="{StaticResource Blue50Accent}"
+    TabBarUnselectedColor="{StaticResource Gray500}"
     >
 
     <TabBar>
