@@ -42,8 +42,8 @@
     <Color x:Key="Blue300Accent">#A7CBF6</Color>
 
 
-    <Color x:Key="Primary">#18206F</Color>
-    <Color x:Key="MainTitle">#9E0059</Color>
+    <Color x:Key="Primary">#2482F2</Color>
+    <Color x:Key="MainTitle">#F92386</Color>
 
     <Color x:Key="WhitishBackgroundColor">#FEF9EF</Color>
     <Color x:Key="GreenishBackgroundColor">#C5DECD</Color>
