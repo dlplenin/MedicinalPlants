@@ -65,6 +65,7 @@
 	  <None Remove="Resources\Fonts\FrederickatheGreat-Regular.ttf" />
 	  <None Remove="Resources\Fonts\KaushanScript-Regular.ttf" />
 	  <None Remove="Resources\Images\growing_grow.png" />
+	  <None Remove="Resources\Images\logo.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -79,6 +80,12 @@
 
 	<ItemGroup>
 	  <Folder Include="Resources\Splash\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

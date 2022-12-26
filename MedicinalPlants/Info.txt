@@ -1,0 +1,8 @@
+﻿Images>
+https://freesvg.org/
+
+MAUI>
+https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/image?view=net-maui-7.0
+https://learn.microsoft.com/en-us/dotnet/maui/user-interface/images/splashscreen?view=net-maui-7.0&tabs=android
+https://learn.microsoft.com/en-us/dotnet/maui/user-interface/layouts/absolutelayout?view=net-maui-7.0
+https://github.com/dotnet/docs-maui/blob/main/docs/user-interface/animation/basic.md
