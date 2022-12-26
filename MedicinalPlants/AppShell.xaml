@@ -7,10 +7,20 @@
     xmlns:views="clr-namespace:MedicinalPlants.Views"
     xmlns:fontAwesome="clr-namespace:FontAwesome"
     Shell.FlyoutBehavior="Disabled"
-    TabBarBackgroundColor="{StaticResource Yellow100Accent}"
-    TabBarTitleColor="{StaticResource Blue50Accent}"
-    TabBarUnselectedColor="{StaticResource Gray500}"
-    >
+>
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor"
+                        Value="{StaticResource Yellow100Accent}" />
+                <Setter Property="Shell.TabBarTitleColor"
+                        Value="{StaticResource Blue50Accent}" />
+                <Setter Property="Shell.TabBarUnselectedColor"
+                        Value="{StaticResource Gray500}" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
 
     <TabBar>
         <Tab Title="Inicio"
