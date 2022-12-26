@@ -6,40 +6,38 @@
     xmlns:local="clr-namespace:MedicinalPlants"
     xmlns:views="clr-namespace:MedicinalPlants.Views"
     xmlns:fontAwesome="clr-namespace:FontAwesome"
-    Shell.FlyoutBehavior="Disabled">
-
-    <!--<ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate views:HomePage}"
-        Route="HomePage" />-->
-
-    <!--<TabBar>
-        <ShellContent Route="HomePage" ContentTemplate="{DataTemplate views:HomePage}" />
-    </TabBar>-->
-
-    <!--<FlyoutItem 
-        Title="Inicio" 
-        Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Home},
-                        FontFamily={StaticResource FontAwesomeSolid},
-                        Color={StaticResource Yellow100Accent}}"
+    Shell.FlyoutBehavior="Disabled"
+    TabBarTitleColor="{StaticResource Primary}"
+    TabBarUnselectedColor="{StaticResource Gray400}"
     >
-        <ShellContent 
-            Route="HomePage" 
-            ContentTemplate="{DataTemplate views:HomePage}" />
-    </FlyoutItem>-->
+
     <TabBar>
         <Tab Title="Inicio"
              Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Home},
-                        FontFamily={StaticResource FontAwesomeSolid},
-                        Color={StaticResource Yellow100Accent}}"
-             >
+                        FontFamily={StaticResource FontAwesomeSolid}}"
+        >
             <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
         </Tab>
         <Tab Title="Plantas"
              Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Leaf},
-                        FontFamily={StaticResource FontAwesomeSolid},
-                        Color={StaticResource GreenBackgroundColor}}"
+                        FontFamily={StaticResource FontAwesomeSolid}}"
+
              >
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+        </Tab>
+
+        <Tab Title="Código"
+             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Github},
+                        FontFamily={StaticResource FontAwesomeBrands}}"
+        >
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+        </Tab>
+
+        <Tab Title="Yo"
+             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Smile},
+                        FontFamily={StaticResource FontAwesomeRegular},
+                        Color={StaticResource GreenBackgroundColor}}"
+        >
             <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
         </Tab>
     </TabBar>
