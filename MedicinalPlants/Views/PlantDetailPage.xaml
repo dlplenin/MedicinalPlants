@@ -13,27 +13,29 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="TitleLabelStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="TextColor" Value="{StaticResource Primary}" />
-                <!--<Setter Property="LineBreakMode" Value="WordWrap" />-->
-                <!--<Setter Property="MaxLines" Value="2" />-->
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="{StaticResource MainTitle}" />
                 <Setter Property="FontFamily" Value="KaushanScriptRegular"></Setter>
             </Style>
-
+            <Style x:Key="ContentLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+                <Setter Property="Margin" Value="0,5,0,25" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout Spacing="20" Padding="15">
+    <StackLayout  Padding="20">
         <Label Text="Nombre:" Style="{StaticResource TitleLabelStyle}" />
-        <Label Text="{Binding Name}" FontSize="Small" TextColor="{StaticResource Primary}" />
+        <Label Text="{Binding Name}" Style="{StaticResource ContentLabelStyle}" />
 
-        <Label Text="Nombres comunes:" FontSize="Medium" TextColor="{StaticResource MainTitle}" />
-        <Label Text="{Binding CommonNames}" FontSize="Small" TextColor="{StaticResource Primary}" />
+        <Label Text="Nombres comunes:" Style="{StaticResource TitleLabelStyle}" />
+        <Label Text="{Binding CommonNames}" Style="{StaticResource ContentLabelStyle}" />
 
-        <Label Text="Nombres científicos:" FontSize="Medium" TextColor="{StaticResource MainTitle}" />
-        <Label Text="{Binding ScientificNames}" FontSize="Small" TextColor="{StaticResource Primary}" />
+        <Label Text="Nombres científicos:" Style="{StaticResource TitleLabelStyle}" />
+        <Label Text="{Binding ScientificNames}" Style="{StaticResource ContentLabelStyle}" />
 
-        <Label Text="Usos:" FontSize="Medium" TextColor="{StaticResource MainTitle}" />
-        <Label Text="{Binding Uses}" FontSize="Small" TextColor="{StaticResource Primary}" HorizontalTextAlignment="Center"  />
+        <Label Text="Usos:" Style="{StaticResource TitleLabelStyle}" />
+        <Label Text="{Binding Uses}" Style="{StaticResource ContentLabelStyle}" HorizontalTextAlignment="Start"  />
     </StackLayout>
 </ContentPage>
