@@ -9,8 +9,22 @@
         <vm:PlantDetailViewModel />
     </ContentPage.BindingContext>
 
+    <!--FontFamily="FrederickatheGreatRegular"-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+                <!--<Setter Property="LineBreakMode" Value="WordWrap" />-->
+                <!--<Setter Property="MaxLines" Value="2" />-->
+                <Setter Property="FontFamily" Value="KaushanScriptRegular"></Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Nombre:" FontSize="Medium" TextColor="{StaticResource MainTitle}" />
+        <Label Text="Nombre:" Style="{StaticResource TitleLabelStyle}" />
         <Label Text="{Binding Name}" FontSize="Small" TextColor="{StaticResource Primary}" />
 
         <Label Text="Nombres comunes:" FontSize="Medium" TextColor="{StaticResource MainTitle}" />
