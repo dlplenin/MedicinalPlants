@@ -10,6 +10,7 @@ namespace MedicinalPlants.Models
         public string CommonNames { get; set; }
         public string ScientificNames { get; set; }
         public string Uses { get; set; }
+        public string ExtraUses { get; set; }
         public string ImagePath { get; set; }
     }
 }

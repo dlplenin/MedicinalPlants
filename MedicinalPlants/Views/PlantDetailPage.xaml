@@ -54,8 +54,11 @@
                 <Label Text="Nombres científicos:" Style="{StaticResource TitleLabelStyle}" />
                 <Label Text="{Binding ScientificNames}" Style="{StaticResource ContentLabelStyle}" />
 
-                <Label Text="Usos:" Style="{StaticResource TitleLabelStyle}" />
+                <Label Text="Usos principales:" Style="{StaticResource TitleLabelStyle}" />
                 <Label Text="{Binding Uses}" Style="{StaticResource ContentLabelStyle}" HorizontalTextAlignment="Start"  />
+
+                <Label Text="Otros usos:" Style="{StaticResource TitleLabelStyle}" />
+                <Label Text="{Binding ExtraUses}" Style="{StaticResource ContentLabelStyle}" HorizontalTextAlignment="Start"  />
             </StackLayout>
         </ScrollView >
     </ContentPage.Content>
