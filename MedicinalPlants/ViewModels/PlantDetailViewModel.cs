@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MedicinalPlants.Models;
+using MedicinalPlants.Utils;
 
 namespace MedicinalPlants.ViewModels
 {
@@ -70,12 +72,15 @@ namespace MedicinalPlants.ViewModels
             try
             {
                 var item = await App.Database.GetItemAsync(Convert.ToInt32(id));
+
+                var imageToShow = PictureUtil.GetImageSource<Plant>(item.ImagePath);
+                
                 Id = item.Id;
                 Name = item.Name;
                 CommonNames = item.CommonNames;
                 ScientificNames = item.ScientificNames;
                 Uses = item.Uses;
-                ImageSource = item.ImagePath;
+                ImageSource = imageToShow;
             }
             catch (Exception)
             {

@@ -23,26 +23,41 @@
                 <Setter Property="Margin" Value="0,5,0,25" />
             </Style>
             <Style x:Key="ImageStyle" TargetType="Image">
-                <Setter Property="WidthRequest" Value="80" />
-                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="200" />
                 <Setter Property="Aspect" Value="AspectFit" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout  Padding="20">
-        <!--<Image Style="{StaticResource ImageStyle}" Source="{Binding ImageSource}"  />-->
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Label 
+                    Text="{Binding Name}" 
+                    Style="{StaticResource TitleLabelStyle}" 
+                    FontSize="30"
+                    />
 
-        <Label Text="Nombre:" Style="{StaticResource TitleLabelStyle}" />
-        <Label Text="{Binding Name}" Style="{StaticResource ContentLabelStyle}" />
+                <Border Stroke="{StaticResource YellowBackgroundColor}"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 40,10,10,40"
+                        Background="{StaticResource GreenishBackgroundColor}"
+                        Padding="16,8"
+                        HorizontalOptions="Center"
+                        Margin="0,10,0,25">
+                    <Image Style="{StaticResource ImageStyle}" Source="{Binding ImageSource}"  />
+                </Border>
 
-        <Label Text="Nombres comunes:" Style="{StaticResource TitleLabelStyle}" />
-        <Label Text="{Binding CommonNames}" Style="{StaticResource ContentLabelStyle}" />
+                <Label Text="Nombres comunes:" Style="{StaticResource TitleLabelStyle}" />
+                <Label Text="{Binding CommonNames}" Style="{StaticResource ContentLabelStyle}" />
 
-        <Label Text="Nombres científicos:" Style="{StaticResource TitleLabelStyle}" />
-        <Label Text="{Binding ScientificNames}" Style="{StaticResource ContentLabelStyle}" />
+                <Label Text="Nombres científicos:" Style="{StaticResource TitleLabelStyle}" />
+                <Label Text="{Binding ScientificNames}" Style="{StaticResource ContentLabelStyle}" />
 
-        <Label Text="Usos:" Style="{StaticResource TitleLabelStyle}" />
-        <Label Text="{Binding Uses}" Style="{StaticResource ContentLabelStyle}" HorizontalTextAlignment="Start"  />
-    </StackLayout>
+                <Label Text="Usos:" Style="{StaticResource TitleLabelStyle}" />
+                <Label Text="{Binding Uses}" Style="{StaticResource ContentLabelStyle}" HorizontalTextAlignment="Start"  />
+            </StackLayout>
+        </ScrollView >
+    </ContentPage.Content>
 </ContentPage>
