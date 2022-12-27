@@ -20,11 +20,8 @@ namespace MedicinalPlants.Repository
                 File.Delete(databasePath);
             }
 
-            if (!File.Exists(databasePath))
-            {
-                using var fileStream = new FileStream(databasePath, FileMode.Create);
-                embeddedDatabaseStream?.CopyTo(fileStream);
-            }
+            using var fileStream = new FileStream(databasePath, FileMode.Create);
+            embeddedDatabaseStream?.CopyTo(fileStream);
 
             _database = new SQLiteAsyncConnection(databasePath);
             _database.CreateTableAsync<Plant>().Wait();

@@ -34,7 +34,7 @@
                         FontFamily={StaticResource FontAwesomeSolid}}"
 
              >
-            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+            <ShellContent ContentTemplate="{DataTemplate views:PlantPage}" />
         </Tab>
 
         <Tab Title="Código"

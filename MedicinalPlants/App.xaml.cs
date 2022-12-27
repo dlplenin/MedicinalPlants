@@ -1,8 +1,15 @@
-﻿namespace MedicinalPlants;
+﻿using MedicinalPlants.Repository;
+
+namespace MedicinalPlants;
 
 public partial class App : Application
 {
-	public App()
+    private static PlantDatabase _database;
+
+    // Create the _database connection as a singleton.
+    public static PlantDatabase Database => _database ??= new PlantDatabase();
+
+    public App()
 	{
 		InitializeComponent();
 

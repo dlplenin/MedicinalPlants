@@ -5,7 +5,14 @@ namespace MedicinalPlants.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        private string _title;
+        bool isBusy = false;
+        public bool IsBusy
+        {
+            get => isBusy;
+            set => SetProperty(ref isBusy, value);
+        }
+        
+        private string _title = string.Empty;
         public string Title
 		{
 			get => _title;
@@ -33,10 +40,8 @@ namespace MedicinalPlants.ViewModels
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
-            if (changed == null)
-                return;
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            changed?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dtos="clr-namespace:MedicinalPlants.DTOs"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             x:Class="MedicinalPlants.Views.PlantPage"
+             xmlns:vm="clr-namespace:MedicinalPlants.ViewModels"
+             Title="{Binding Title }">
+
+    <ContentPage.BindingContext>
+        <vm:PlantViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="NameLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource MainTitle}" />
+                <Setter Property="Margin" Value="0,0,0,5" />
+            </Style>
+
+            <Style x:Key="IconStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+                <Setter Property="FontFamily" Value="{StaticResource FontAwesomeSolid}" />
+                <Setter Property="MinimumWidthRequest" Value="20" />
+            </Style>
+
+            <Style x:Key="IconLabelStackLayout" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+            </Style>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="MaxLines" Value="2" />
+            </Style>
+
+
+            <Style x:Key="DetailsStackLayout" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Spacing" Value="4" />
+            </Style>
+
+            <Style x:Key="ImageFrameStyle" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="Margin" Value="0, 0, 10, 0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+            </Style>
+            <Style x:Key="ImageStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="80" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
+
+            <Style x:Key="FrameCardViewStyle" TargetType="Border">
+                <!--<Setter Property="CornerRadius" Value="15" />-->
+                <Setter Property="StrokeShape" Value="RoundRectangle 15" />
+                <Setter Property="Margin" Value="6, 3, 6, 3" />
+                <Setter Property="Padding" Value="10, 10, 15, 10" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Stroke" Value="{StaticResource GreenBackgroundColor}" />
+                <Setter Property="StrokeThickness" Value="1.5" />
+            </Style>
+
+            <Style x:Key="ItemsInsideCardViewStackLayoutStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Spacing" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <RefreshView x:DataType="vm:PlantViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                    <CollectionView x:Name="ItemsListView"
+                        ItemsSource="{Binding Items}"
+                        SelectionMode="None"
+                        BackgroundColor="{StaticResource Blue300Accent}"
+                        
+                    >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout 
+                                Orientation="Vertical"
+                                SnapPointsType="None"
+                                SnapPointsAlignment="Start"
+                                               />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Spacing="8" x:DataType="dtos:PlantDto">
+                                    <Border Style="{StaticResource FrameCardViewStyle}">
+                                        <StackLayout Style="{StaticResource ItemsInsideCardViewStackLayoutStyle}">
+                                                <Frame Style="{StaticResource ImageFrameStyle}">
+                                                    <Image Style="{StaticResource ImageStyle}" Source="{Binding ImageSource}"  />
+                                                </Frame>
+                                                <StackLayout Style="{StaticResource DetailsStackLayout}">
+                                                    <Label 
+                                                        Text="{Binding Name}" 
+                                                        Style="{StaticResource NameLabel}"
+                                                        />
+                                                    <!--<Label 
+                                                        Text="{Binding Id}" 
+                                                        Style="{StaticResource NameLabel}"
+                                                    />-->
+                                                    <StackLayout Style="{StaticResource IconLabelStackLayout}">
+                                                        <Label                 
+                                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Book}" 
+                                                            Style="{StaticResource IconStyle}"/>
+                                                        <Label 
+                                                            Text="{Binding ScientificNames}" 
+                                                            Style="{StaticResource LabelStyle}" />
+                                                    </StackLayout>
+                                                    <!--<StackLayout Style="{StaticResource IconLabelStackLayout}">
+                                                        <Label                 
+                                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Prescription}"   
+                                                            Style="{StaticResource IconStyle}"/>
+                                                        <Label 
+                                                            Text="{Binding Uses}" 
+                                                            Style="{StaticResource LabelStyle}"/>
+                                                    </StackLayout>-->
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer 
+                                                            NumberOfTapsRequired="1"
+                                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PlantViewModel}}, Path=ItemTapped}"		
+                                                            CommandParameter="{Binding .}">
+                                                        </TapGestureRecognizer>
+                                                    </StackLayout.GestureRecognizers>
+                                                </StackLayout>
+                                            </StackLayout>
+                                    </Border>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
