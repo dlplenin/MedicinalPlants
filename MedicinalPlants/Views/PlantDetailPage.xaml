@@ -9,7 +9,6 @@
         <vm:PlantDetailViewModel />
     </ContentPage.BindingContext>
 
-    <!--FontFamily="FrederickatheGreatRegular"-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="TitleLabelStyle" TargetType="Label">

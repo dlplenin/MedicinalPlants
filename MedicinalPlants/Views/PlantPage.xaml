@@ -95,17 +95,21 @@
                                     <Border Style="{StaticResource FrameCardViewStyle}">
                                         <StackLayout Style="{StaticResource ItemsInsideCardViewStackLayoutStyle}">
                                                 <Frame Style="{StaticResource ImageFrameStyle}">
-                                                    <Image Style="{StaticResource ImageStyle}" Source="{Binding ImageSource}"  />
+                                                    <Image Style="{StaticResource ImageStyle}" Source="{Binding ImageSource}">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer 
+                                                                NumberOfTapsRequired="1"
+                                                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:PlantViewModel}}, Path=ItemTapped}"		
+                                                                CommandParameter="{Binding .}">
+                                                            </TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                                    </Image>
                                                 </Frame>
                                                 <StackLayout Style="{StaticResource DetailsStackLayout}">
                                                     <Label 
                                                         Text="{Binding Name}" 
                                                         Style="{StaticResource NameLabel}"
                                                         />
-                                                    <!--<Label 
-                                                        Text="{Binding Id}" 
-                                                        Style="{StaticResource NameLabel}"
-                                                    />-->
                                                     <StackLayout Style="{StaticResource IconLabelStackLayout}">
                                                         <Label                 
                                                             Text="{x:Static fontAwesome:FontAwesomeIcons.Book}" 
@@ -114,14 +118,6 @@
                                                             Text="{Binding ScientificNames}" 
                                                             Style="{StaticResource LabelStyle}" />
                                                     </StackLayout>
-                                                    <!--<StackLayout Style="{StaticResource IconLabelStackLayout}">
-                                                        <Label                 
-                                                            Text="{x:Static fontAwesome:FontAwesomeIcons.Prescription}"   
-                                                            Style="{StaticResource IconStyle}"/>
-                                                        <Label 
-                                                            Text="{Binding Uses}" 
-                                                            Style="{StaticResource LabelStyle}"/>
-                                                    </StackLayout>-->
                                                     <StackLayout.GestureRecognizers>
                                                         <TapGestureRecognizer 
                                                             NumberOfTapsRequired="1"
