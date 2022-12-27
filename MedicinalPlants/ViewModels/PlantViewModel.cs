@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reflection;
 using MedicinalPlants.DTOs;
 using MedicinalPlants.Models;
+using MedicinalPlants.Utils;
 using MedicinalPlants.Views;
 
 namespace MedicinalPlants.ViewModels
@@ -35,20 +36,13 @@ namespace MedicinalPlants.ViewModels
 
             try
             {
-                var assembly = typeof(Plant).GetTypeInfo().Assembly;
-                var imagesOfPlants = assembly.GetManifestResourceNames()
-                    .Where(imagePath => imagePath.Contains("PicturesOfPlants"))
-                    .ToList();
-
-                var defaultImageToShow = ImageSource.FromFile("no_image_available.png");
-
                 Items.Clear();
                 var recordsInDataBase = await App.Database.GetItemsAsync();
 
                 foreach (var record in recordsInDataBase)
                 {
-                    var imageToShow = imagesOfPlants.Any(image => image.Contains(record.ImagePath)) ? ImageSource.FromResource($"MedicinalPlants.PicturesOfPlants.{record.ImagePath}") : defaultImageToShow;
-
+                    var imageToShow = PictureUtil.GetImageSource<Plant>(record.ImagePath);
+                    
                     var plantToAdd = new PlantDto
                     {
                         Id = record.Id,

@@ -22,10 +22,17 @@
                 <Setter Property="TextColor" Value="{StaticResource Primary}" />
                 <Setter Property="Margin" Value="0,5,0,25" />
             </Style>
+            <Style x:Key="ImageStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="80" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <StackLayout  Padding="20">
+        <!--<Image Style="{StaticResource ImageStyle}" Source="{Binding ImageSource}"  />-->
+
         <Label Text="Nombre:" Style="{StaticResource TitleLabelStyle}" />
         <Label Text="{Binding Name}" Style="{StaticResource ContentLabelStyle}" />
 

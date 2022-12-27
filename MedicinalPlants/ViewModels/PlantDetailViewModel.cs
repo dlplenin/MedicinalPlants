@@ -20,6 +20,7 @@ namespace MedicinalPlants.ViewModels
         private string commonNames;
         private string scientificNames;
         private string uses;
+        private ImageSource imageSource;
 
         public int Id { get; set; }
 
@@ -48,6 +49,12 @@ namespace MedicinalPlants.ViewModels
             set => SetProperty(ref uses, value);
         }
 
+        public ImageSource ImageSource
+        {
+            get => imageSource;
+            set => SetProperty(ref imageSource, value);
+        }
+
         public string ItemId
         {
             get => itemId;
@@ -68,6 +75,7 @@ namespace MedicinalPlants.ViewModels
                 CommonNames = item.CommonNames;
                 ScientificNames = item.ScientificNames;
                 Uses = item.Uses;
+                ImageSource = item.ImagePath;
             }
             catch (Exception)
             {
