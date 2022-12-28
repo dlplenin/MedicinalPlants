@@ -85,11 +85,13 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="&#x2022; The main objective of this project is to be a guide for developers who are new to MAUI " />
+                                <Span Text="&#x2022; The main objective of this project is to be a basic resource for developers who are new to MAUI " />
                                 <Span Text="{x:Static fontAwesome:FontAwesomeIcons.Microsoft}" 
                                       Style="{StaticResource IconBrandStyleSpan}" 
                                       TextColor="Blue"/>
                                 <Span Text=" ."></Span>
+                                <Span Text=" Improvements like pagination, L&#38;F could be implemented." FontSize="12"></Span>
+
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
