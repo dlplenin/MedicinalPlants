@@ -37,19 +37,11 @@
             <ShellContent ContentTemplate="{DataTemplate views:PlantPage}" />
         </Tab>
 
-        <Tab Title="Código"
-             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Github},
-                        FontFamily={StaticResource FontAwesomeBrands}}"
+        <Tab Title="Info"
+             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.InfoCircle},
+                        FontFamily={StaticResource FontAwesomeSolid}}"
         >
-            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
-        </Tab>
-
-        <Tab Title="Yo"
-             Icon="{FontImage Glyph={x:Static fontAwesome:FontAwesomeIcons.Smile},
-                        FontFamily={StaticResource FontAwesomeRegular},
-                        Color={StaticResource GreenBackgroundColor}}"
-        >
-            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
+            <ShellContent ContentTemplate="{DataTemplate views:InfoPage}" />
         </Tab>
     </TabBar>
 </Shell>
